@@ -1,9 +1,7 @@
 // ==UserScript==
-// @name:en      Change webpages' background
-// @name:zh      改变网页的背景
+// @name         Change webpages' background(改变网页的背景)
 // @version      1.0
-// @description:en  Change webpages' background to the picture you choose. Press F2 to change the picture, F4 to switch whether the background displays.
-// @description:zh  根据你选择的图片更换网页的背景，按F2更换背景，按F4切换是否显示背景。
+// @description  Change webpages' background to the picture you choose. Press F2 to change the picture, F4 to switch whether the background displays.(根据你选择的图片更换网页的背景，按F2更换背景，按F4切换是否显示背景。)
 // @author       Jeremy Yuan QQ:1223962053
 // @require      http://cdn.bootcss.com/jquery/1.8.3/jquery.min.js
 // @match        http://*/*
