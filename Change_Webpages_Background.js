@@ -36,7 +36,7 @@
             if ($('body').css('opacity') == '0.9') {
                 RemoveBackground();
             } else {
-                AddBackground(url);
+                AddBackground(GM_getValue('url'));
             }
         }
     });
