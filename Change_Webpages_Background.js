@@ -44,10 +44,11 @@
     $(document).keydown((event) => {
         if (event.which == 113) {
             var geturl = prompt('请输入图片的网址，按确定生效。');
-            if (geturl != null) GM_setValue('url', geturl);
-            url = geturl;
-            RemoveBackground(url);
-            AddBackground(url);
+            if (geturl != null) {
+                if (GM_getValue('url') != undefined) RemoveBackground();
+                GM_setValue('url', geturl);
+                AddBackground(geturl);
+            }
         }
     });
 })();
