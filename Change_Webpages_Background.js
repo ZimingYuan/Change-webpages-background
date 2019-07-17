@@ -17,7 +17,7 @@
 
     function AddBackground(url) {
         $('body').css('opacity', '0.9');
-        $('body').children(':not(style,script,iframe, svg, #initial-loading)').css('opacity', '0.9');
+        $('body').children(':not(style,script,iframe, svg, #initial-loading, #isolated)').css('opacity', '0.9');
         var background = '<div id="GM_Background" style="background-image: url(' + url + '); position:fixed; top: 0; left: 0; width:100%; height:100%; z-index:-10; background-repeat: no-repeat; background-size: cover; background-color:#fff; opacity:0.6;"></div>';
         $('body').append(background);
     }
