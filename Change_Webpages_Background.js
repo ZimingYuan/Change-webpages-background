@@ -6,6 +6,7 @@
 // @require      http://cdn.bootcss.com/jquery/1.8.3/jquery.min.js
 // @match        http://*/*
 // @match        https://*/*
+// @match        file:///*
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @noframes
