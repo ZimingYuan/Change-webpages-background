@@ -6,7 +6,7 @@ Change webpages' background to the picture you choose through the picture's url.
 
 ### Known Problems
 * Because of github's security policy, the background can't display on github.
-* The mobile version of sina weibo pages can't display normally on Chrome(bug?) when the background displays. You can press F4 to hide the background or use other explorer such as Firefox or Edge.
+* Some long webpages such as the mobile version of sina weibo and jianshu(jianshu.com) can't display normally on Chrome(bug?) when the background displays. You can press F4 to hide the background or use other explorer such as Firefox or Edge.
 
 ### Pictures
 ![Before](https://github.com/ZimingYuan/Change-webpages-background/blob/master/Before.png)
