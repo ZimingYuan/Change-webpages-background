@@ -48,13 +48,13 @@
 
     function DrawBackground(url) {
         let canvas = $('#GM_Background')[0];
-        canvas.width = screen.width;
-        canvas.height = screen.height;
+        let scale = window.devicePixelRatio / 1.25;
+        canvas.width = screen.width / scale;
+        canvas.height = screen.height / scale;
         let ctx = canvas.getContext('2d');
         let img = new Image(); img.src = url;
         img.onload = () => {
-            let scale = window.devicePixelRatio / 1.25;
-            ctx.scale(screen.width / img.width / scale, screen.height / img.height / scale);
+            ctx.scale(canvas.width / img.width, canvas.height / img.height);
             ctx.drawImage(img, 0, 0);
         };
     }
