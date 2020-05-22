@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Change webpages' background(改变网页的背景)
-// @version      2.0
+// @version      3.0
 // @description  Change webpages' background to the picture you choose. Press F2 to change the picture, F4 to change the opacity of the foreground elements.(根据你选择的图片更换网页的背景，按F2更换背景，按F4改变前景元素的透明度。)
 // @author       Jeremy Yuan QQ:1223962053
 // @require      http://cdn.bootcss.com/jquery/1.8.3/jquery.min.js
@@ -54,8 +54,13 @@
         let ctx = canvas.getContext('2d');
         let img = new Image(); img.src = url;
         img.onload = () => {
-            ctx.scale(canvas.width / img.width, canvas.height / img.height);
-            ctx.drawImage(img, 0, 0);
+            let midx = img.width / 2, midy = img.height / 2;
+            let imgscale = Math.max(canvas.width / 2 / midx,
+                                    canvas.width / 2 / (img.width - midx),
+                                    canvas.height / 2 / midy,
+                                    canvas.height / 2 / (img.height - midy));
+            ctx.scale(imgscale, imgscale);
+            ctx.drawImage(img, canvas.width / 2 - midx * imgscale, canvas.height / 2 - midy * imgscale);
         };
     }
 
