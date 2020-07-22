@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Change webpages' background(改变网页的背景)
-// @version      3.0
-// @description  Change webpages' background to the picture you choose. Press F2 to change the picture, F4 to change the opacity of the foreground elements.(根据你选择的图片更换网页的背景，按F2更换背景，按F4改变前景元素的透明度。)
+// @version      4.0
+// @description  Change webpages' background to the picture you choose. Press F2 to change background to the online picture, F6 to change background to the local picture, F4 to change the opacity of the foreground elements.(根据你选择的图片更换网页的背景，按F2更换背景为网络图片，按F6更换背景为本地图片，按F4改变前景元素的透明度。)
 // @author       Jeremy Yuan QQ:1223962053
 // @require      http://cdn.bootcss.com/jquery/1.8.3/jquery.min.js
 // @match        http://*/*
@@ -78,12 +78,35 @@
 
     $(document).keydown((event) => {
         if (event.which == 113) {
-            var geturl = prompt('请输入图片的网址，按确定生效。');
+            var geturl = prompt('请输入图片的网址，按确定生效。\nPlease input the url of the image, press OK to take effect.');
             if (geturl != null) {
                 GM_setValue('url', geturl);
                 if (url == undefined) { url = geturl; AddBackground(); }
                 else { url = geturl; DrawBackground(url); }
             }
+        }
+    });
+
+    $(document).keydown((event) => {
+        if (event.which == 118) {
+            if ($('#GM_ImageUpload').length == 0) {
+                $('body').append('<input type="file" id="GM_ImageUpload" style="display: none"></input>');
+                $('#GM_ImageUpload').change(function () {
+                    let file = this.files[0];
+                    if (! /image\/\w+/.test(file.type)) {
+                        alert("请确保文件为图像类型\nMake sure the file type is image.");
+                        return false;
+                    }
+                    let reader = new FileReader();
+                    reader.readAsDataURL(file);
+                    reader.onload = function() {
+                        GM_setValue('url', this.result);
+                        if (url == undefined) { url = this.result; AddBackground(); }
+                        else { url = this.result; DrawBackground(url); }
+                    }
+                });
+            }
+            $('#GM_ImageUpload').click();
         }
     });
 })();
