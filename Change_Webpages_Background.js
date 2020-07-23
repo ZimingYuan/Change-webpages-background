@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Change webpages' background(改变网页的背景)
 // @version      4.0
-// @description  Change webpages' background to the picture you choose. Press F2 to change background to the online picture, F6 to change background to the local picture, F4 to change the opacity of the foreground elements.(根据你选择的图片更换网页的背景，按F2更换背景为网络图片，按F6更换背景为本地图片，按F4改变前景元素的透明度。)
+// @description  Change webpages' background to the picture you choose. Press F2 to change background to the online picture, F7 to change background to the local picture, F4 to change the opacity of the foreground elements.(根据你选择的图片更换网页的背景，按F2更换背景为网络图片，按F7更换背景为本地图片，按F4改变前景元素的透明度。)
 // @author       Jeremy Yuan QQ:1223962053
 // @require      http://cdn.bootcss.com/jquery/1.8.3/jquery.min.js
 // @match        http://*/*
